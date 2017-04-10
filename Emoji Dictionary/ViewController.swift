@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var thetable: UITableView!
     
-    var emojis = ["😎","💩","😀","👻","🐹"]
+    var emojis : [Emoji] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         thetable.dataSource = self
         thetable.delegate = self
+        emojis = makeEmojiArray()
     
     }
 
@@ -30,7 +31,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = emojis[indexPath.row]
+        let emoji = emojis[indexPath.row]
+        cell.textLabel?.text = emoji.stringEmoji
         return cell
     }
     
@@ -43,7 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let defVC = segue.destination as!
             DefinitionViewController
-        defVC.emoji = sender as! String
+        defVC.emoji = sender as! Emoji
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,6 +53,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
 
+    func makeEmojiArray() -> [Emoji] {
+        let emoji1 = Emoji()
+        emoji1.stringEmoji = "😎"
+        emoji1.date = 2010
+        emoji1.category = "Smiley"
+        emoji1.definition = "A cool guy"
+        
+        let emoji2 = Emoji()
+        emoji2.stringEmoji = "💩"
+        emoji2.date = 2011
+        emoji2.category = "Item"
+        emoji2.definition = "A poop"
+        
+        let emoji3 = Emoji()
+        emoji3.stringEmoji = "😀"
+        emoji3.date = 2005
+        emoji3.category = "Smiley"
+        emoji3.definition = "A happy guy"
+        
+        let emoji4 = Emoji()
+        emoji4.stringEmoji = "👻"
+        emoji4.date = 2009
+        emoji4.category = "Creature"
+        emoji4.definition = "A ghost"
+        
+        let emoji5 = Emoji()
+        emoji5.stringEmoji = "🐹"
+        emoji5.date = 2012
+        emoji5.category = "Creature"
+        emoji5.definition = "A hamster"
+        
+        return [emoji1, emoji2, emoji3, emoji4, emoji5]
+    }
 
 }
 

@@ -63,23 +63,46 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a church." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxE-VA-gMc">
-                                <rect key="frame" x="125" y="393" width="125" height="21"/>
+                                <rect key="frame" x="125" y="393" width="125" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P72-Fb-dcG">
+                                <rect key="frame" x="150" y="439" width="75" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bhD-EF-bbi">
+                                <rect key="frame" x="144.5" y="478" width="86.5" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Origin Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBK-BF-vK7">
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oyx-Nt-85A" firstAttribute="centerX" secondItem="3Dv-kO-eqF" secondAttribute="centerX" id="9jc-l5-Uba"/>
+                            <constraint firstItem="bhD-EF-bbi" firstAttribute="centerX" secondItem="3Dv-kO-eqF" secondAttribute="centerX" id="N1H-sq-4oS"/>
                             <constraint firstItem="QxE-VA-gMc" firstAttribute="top" secondItem="oyx-Nt-85A" secondAttribute="bottom" constant="50" id="abt-Lo-MZ6"/>
+                            <constraint firstItem="P72-Fb-dcG" firstAttribute="centerX" secondItem="3Dv-kO-eqF" secondAttribute="centerX" id="bqs-cr-dj5"/>
                             <constraint firstItem="QxE-VA-gMc" firstAttribute="centerX" secondItem="3Dv-kO-eqF" secondAttribute="centerX" id="cle-GR-OMA"/>
+                            <constraint firstItem="EBK-BF-vK7" firstAttribute="top" secondItem="P72-Fb-dcG" secondAttribute="bottom" constant="19" id="jLB-Bn-ttx"/>
+                            <constraint firstItem="P72-Fb-dcG" firstAttribute="top" secondItem="QxE-VA-gMc" secondAttribute="bottom" constant="25.5" id="mOK-E2-iHm"/>
                             <constraint firstItem="oyx-Nt-85A" firstAttribute="top" secondItem="6wT-jd-3ng" secondAttribute="bottom" constant="40" id="ybn-fK-ghI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoryLabel" destination="P72-Fb-dcG" id="IPN-5S-VJy"/>
                         <outlet property="definitionLabel" destination="QxE-VA-gMc" id="gXP-FN-PeY"/>
                         <outlet property="emojiLabel" destination="oyx-Nt-85A" id="bg3-Sl-rxj"/>
+                        <outlet property="originLabel" destination="EBK-BF-vK7" id="suL-dP-bNP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ok-gO-e0Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
